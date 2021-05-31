@@ -10,7 +10,9 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const { initializeDBConnection } = require('./db/db.connect.js');
+const populateDB=require("./db/populateDB.js");
 initializeDBConnection();
+populateDB();
 
 const usersRouter = require('./routers/users-router');
 const videosRouter = require('./routers/videos-router');
